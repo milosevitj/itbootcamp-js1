@@ -1,0 +1,67 @@
+a{
+    background-color: blueviolet;
+   /*
+    border-top-style: dashed;
+    border-top-color: black;
+    border-top-width: 4px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 30%;
+
+    */
+    /*
+    padding-top: 9px;
+    padding-left: 12px;
+
+    */
+    padding: 5px 10px 15px 5px;
+    margin: 10px;
+    border:4px dashed black;
+   
+}
+
+p{background-color: aqua;
+    width: 300px;
+    height: 100px;
+
+}
+*{
+    box-sizing: border-box;
+}
+
+#prvi{
+    border:solid;
+    background-color: bisque;
+    border-width: 5px;
+    margin: 1px;
+    display:inline-block;
+    height: 50px;
+    width: 50%;
+    padding-left: 5px;
+    padding-top: 15px;
+    
+}
+
+
+#drugi{
+    border:solid;
+    background-color: gray;
+    border-width: 5px;
+    padding-left: 5px;
+    padding-top: 15px;
+    display:inline-block;
+    height: 50px;
+    width: 50%;
+    margin: 1px;
+}
+
+/*
+display svojstva:nacin prikaya html taga
+
+BLOCK
+p,div, h1...h6, table
+INLINE
+span,a td
+
+INLINE-BLOCK
+
+*/

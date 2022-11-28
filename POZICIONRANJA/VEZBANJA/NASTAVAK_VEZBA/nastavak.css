@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+#header{
+    border: solid;
+    background-color: aqua;
+    width:100%;
+    height: 300px;
+    position: relative;
+}
+
+.naslov {
+    position: absolute;
+    bottom: 150px;
+    right: 35%;
+    text-align: center;
+}
+
+  
+.dole_levo{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.gore_levo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+
+.gore_desno{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dole_desno{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#kaca{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100px;
+}
+
+#prvi{
+    position: relative;
+    background-color: green;
+    width: 70px;
+    padding-bottom: 35px;
+    top:  30px;
+    z-index:-3;
+}
+
+#drugi{
+    position: relative;
+    background-color: yellow;
+    width: 70px;
+    padding-bottom: 25px;
+    padding-right: 0;
+    left: 30px;
+    z-index: -2;
+
+}
+
+#treci{
+    background-color: aqua;
+    width: 70px;
+    padding-bottom: 40px;
+    position: relative;
+    left: 50px;
+    bottom: 90px;
+    z-index: -1;
+}
+
+#nekidiv{
+    height: 50px;
+    font-size: 70px;
+    background-color: bisque;
+    overflow:auto;
+}
+ 
+.novidiv{
+    float: left;
+    font-size: 30px;
+    color: brown;
+    padding: 10px;
+}
+
+.topbar{
+    clear: both;
+}
