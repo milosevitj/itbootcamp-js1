@@ -26,3 +26,8 @@ div{
     background-color: orange;
 }
 
+div:first-of-type {
+    position: relative;
+    z-index: 1;
+}
+
