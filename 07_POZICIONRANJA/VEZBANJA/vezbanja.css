@@ -1,42 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
 .slika{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZG5FvXH7pBuewg_zxAlxx9C6ywRHkNXUpw&usqp=CAU);
     width:100%;
     height: 100px;
-    position:fixed;
+    position:relative;
     
 }
 
-.naslov {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
+div{
     text-align: center;
-}
-
-  
-.dole_levo{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-
-.gore_levo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    color: rgb(8, 8, 8);
+    font-size: 20px;
     
 }
 
-.gore_desno{
+div{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div{
+    position: absolute;
+    right: 0;
+    top:0;
+}
+div{
     position:absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 0;
+    right: 0;
 }
-
-.dole_desno{
+div{
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    
+    bottom: 0;
+    left: 0;
 }
 
+div{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
