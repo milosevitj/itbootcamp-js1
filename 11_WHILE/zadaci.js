@@ -187,3 +187,22 @@ if (brojDelioca == 2)
 else{
     console.log (`broj ${k} je slozen`)
 }
+
+// 2 nacin
+
+k = 5;
+i = 2;
+let prostBroj = true;
+while (i<k){
+    if (k%1 ==0){
+        prostBroj = false;
+        break;
+    }
+    i++;
+}
+if (prostBroj == false){
+    console.log (`broj ${k} je slozen broj`);
+}
+else {
+    console.log (`broj ${k} je prost broj`);
+}
