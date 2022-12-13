@@ -150,7 +150,7 @@ for(i=n; i<=m; i++){
 }
 console.log (`suma brojeva od ${n} do ${m} je ${suma}`);
 
-// Odrediti sumu brojeva od n do m koji nisu deljivi brojem a
+// 16 Odrediti sumu brojeva od n do m koji nisu deljivi brojem a
 
 n= 10;
 m= 15;
@@ -163,3 +163,68 @@ for (i=n; i<=m; i++){
     }
 }
 console.log(suma);
+
+
+// 20. Napraviti tabelu sa 6 redova.
+// Svaki red tabele treba da ima po dve ćelije (dve kolone).
+// Svakom parnom redu dodati klasu „obojen“.
+// Korišćenjem CSS-a, klasi obojen postaviti proizvoljnu boju pozadine. 
+
+let str = `<table border="1">`;
+for (i=1; i<=6; i++){
+    if(i%2==0){
+        str+= 
+        `
+        <tr class="roze">
+        <td>Tekst</td>
+        <td>Tekst</td>
+        </tr>`
+    }
+    else{
+        str+= 
+        `
+        <tr>
+        <td>Tekst</td>
+        <td>Tekst</td>
+        </tr>`
+    }
+    }
+
+   
+str+=`</table>`;
+// document.body.innerHTML += str; moze i ovako ispis
+document.write(str);
+
+
+// document.write(" <table border=2px solid black>")
+// for (red = 1; red <= 6; red++) {
+//     if(red%2==0){
+//     document.write(" <tr> ")}
+//     for (celija = 1; celija <= 2; celija++) {
+//         document.write(" <td style= padding:10px> Tekst  </td> ")
+//     }
+//     document.write(" </tr> ")
+// }
+// document.write(" </table> ")
+
+// 21 zadatak Koristeći for petlju kreirati neuređenu listu sa ugnježdenim elementima, kao što je prikazano na slici sa desne strane.
+
+let lista =`<ul>`;
+for (i=1;i<=10;i++){
+    if (i%3==0){
+        lista+=
+        `
+            <ul>
+                <li> Element ${i} </li>
+            </ul>    
+        `;
+    }
+    else{
+    lista += `<li>Element ${i}</li>`
+}
+}
+
+lista += `</ul>`;
+document.write(lista);
+
+
