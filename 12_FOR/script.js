@@ -192,7 +192,6 @@ for (i=1; i<=6; i++){
 
    
 str+=`</table>`;
-// document.body.innerHTML += str; moze i ovako ispis
 document.write(str);
 
 
