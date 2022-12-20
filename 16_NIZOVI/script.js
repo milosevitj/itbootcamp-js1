@@ -90,7 +90,7 @@ let sredinaElem = niz => {
         sredina = sredina + niz[i];
         broj++
     }
-        return(sredinaElem=sredina/broj)
+        return sredina/broj
         
     }
 
@@ -127,20 +127,18 @@ let srVrednostParnih = niz => {
 
 console.log(srVrednostParnih(brojevi3));
 
-
-
 // 5 Odrediti maksimalnu vrednost u celobrojnom nizu.
-// let brojevi3 = [5,2,1]
 let maksVrednost = niz => {
     let maks = niz [0];
     for(let i=1; i<niz.length;i++){
         if(niz[i]>maks){
         maks=niz[i]
     }
+    
+}
     return maks;
 }
-}
-let br = [8,11,10,11,4]
+let br = [8,11,20,11,4]
 console.log(maksVrednost(br))
 
 // 5 Odrediti minimalnu vrednost u celobrojnom nizu.
@@ -151,10 +149,89 @@ let minNiza = niz => {
         if(niz[i]< min){
         min=niz[i];
     }
-    return min;
+   
 }
+    return min;
 }
 br = [8,11,10,11,4]
 console.log(minNiza (br))
 
 
+// Odrediti indeks maksimalnog elementa celobrojnog niza.
+
+let maksElem = niz => {
+    let maks = [0];
+    for(let i=1; i<niz.length;i++){
+        if(niz[i]>maks){
+        maks=niz[i]
+        
+    } 
+}
+     return maks;
+}
+let element = [8,11,25,31,4]
+console.log(maksElem(element), element.indexOf(maksElem(element)))
+
+// Odrediti broj elemenata celobrojnog niza koji su veći od srednje vrednosti.
+
+let srVrednost = niz => { 
+    let sredina=0;
+    let broj = 0;
+    let veci = 0;
+    for(let i=0;i<niz.length;i++){
+        sredina = sredina + niz[i];
+        broj++
+        if(niz[i]>sredina/broj){
+            veci++
+        }
+    }
+    
+    return veci;
+}
+       
+        
+// let broj3 = [8,8,9,8]
+console.log(srVrednost(element));
+
+// 10 Izračunati zbir pozitivnih elemenata celobrojnog niza.
+
+let pozitivni = niz => {
+    let zbir=0;
+    for(let i=0; i<niz.length;i++){
+        if(niz[i]>0){
+            zbir=zbir+niz[i]
+        }
+    }
+    return zbir;
+}
+let pozBr = [-2,5,2]
+console.log(pozitivni(pozBr))
+
+// 11 Odrediti broj parnih elemenata u celobrojnom nizu.
+
+let parniBr = niz =>{
+    broj=0;
+    for(let i=0;i<niz.length;i++){
+        if(niz[i]%2==0){
+            broj++
+        }
+    }
+    return broj;
+}
+let parni=[2,1,8,1]
+console.log(parniBr(parni))
+
+// 12  Odrediti broj parnih elemenata sa neparnim indeksom.
+
+let nepInd = niz =>{
+    broj=0;
+    indeks= indeks.indexOf(parni);
+    for(let i=0;i<niz.length;i++){
+        if(niz[i]%2==0 && indeks%2!=0){
+            broj++
+        }
+    }
+    return broj;
+}
+parni=[2,4,8,1]
+console.log(nepInd(parni))
