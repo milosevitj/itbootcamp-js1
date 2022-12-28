@@ -60,7 +60,7 @@ let dan = {
     kisa: false,
     sunce: false,
     oblacno: true,
-    temperature: [15,15,20,20,25,25],
+    temperature: [5,10,15],
 
     // 1 zadatak Određuje i vraća prosečnu temperaturu izmerenu tog dana.
 
@@ -114,47 +114,36 @@ let dan = {
     },
     // 5 Vraća true ukoliko je u većini dana temperatura bila iznad proseka. U suprotnom vraća false. 
     iznadProseka: function(){
-        let pros = this.prosecna();
-        let x;
-        this.temperature.forEach(t=>{
-            if(t>pros){
-               x=true;
-            }
-            else{
-                x=false;
-            }
-        });
-        return x;
+        // if(this.brNatprosecnih()>this.temperature.length/2){
+        //     return true;
+        // }
+        // else{
+        //     return false;
+        // }
+        return this.brNatprosecnih()>this.temperature.length/2
     },
     //6 Za dan se smatra da je leden ukoliko nijedna temperatura izmerena tog dana nije iznosila iznad 0 stepeni. Metod vraća true ukoliko je dan bio leden, u suprotnom metod vraća false.
     ledenDan:function(){
         let x;
         this.temperature.forEach(t=>{
-            if(t>0){
+            if(t<0){
                 x=true;
             }
             else{
                 x=false;
             }
         });
-        return x
-    },
-    // 7 Za dan se smatra da je tropski ukoliko nijedna temperatura izmerena tog dana nije iznosila ispod 24 stepena. Metod vraća true ukoliko je dan bio tropski, u suprotnom vraća false.
-    tropskiDan: function(){
-        let x;
-        this.temperature.forEach(t=>{
-            if(t<24){
-                x=true
-            }
-            else{
-                x=false
-            }
-        })
         return x;
     },
-    // 8 Dan je nepovoljan ako je razlika između neka dva uzastopna merenja veća od 8 stepeni. Metod vraća true ukoliko je dan bio nepovoljan, u suprotnom vraća false.
-
-    
+    // 
+    leden:function(){
+        for(let i=0; i<this.temperature.length;i++){
+            if(this.temperature[i]>0){
+                return false;
+            }
+        }
+        return true;
+    },
 
 };
 console.log(dan.prosecna());
@@ -163,4 +152,5 @@ console.log(dan.brMaksimalne());
 console.log(dan.brDvaParam());
 console.log(dan.iznadProseka());
 console.log(dan.ledenDan());
-console.log(dan.tropskiDan())
+console.log(dan.leden());
+
