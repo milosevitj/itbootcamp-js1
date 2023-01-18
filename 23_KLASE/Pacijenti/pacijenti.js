@@ -43,18 +43,27 @@ class Pacijenti {
     stampaj(){
         console.log(`${this.ime}, ${this.visina}, ${this.tezina}`)
     }
-
-    bmi(){
-        let bmiVrednost= (this.tezina)/((this.visina/100) *(this.visina/100))
+    stampajListu(){
+        let htmlLista = 
+        `<ul>
+            <li>Ime: ${this.ime}</li>
+            <li>Visina: ${this.visina}</li>
+            <li>Tezina: ${this.tezina}</li>
+        </ul>`;
+        return htmlLista
     }
 
-    kritican(){
-        if(this.bmi()<15 || this.bmi() >40){
-            return true
+    bmi(){
+        let bmi = this.težina / (this.visina * this.visina);
+        return bmi;
+    }
+
+    kritican() {
+        let x = false;
+        if (this.bmi() < 15 || this.bmi() > 40) {
+            x = true;
         }
-        else{
-            return false
-        }
+        return x;
     }
 }
 export default Pacijenti

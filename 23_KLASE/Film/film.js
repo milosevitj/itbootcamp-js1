@@ -1,11 +1,20 @@
 class Film {
-    constructor (naslov, reziser, godinaIzdanja){
-        this.naslov = naslov;
-        this.reziser = reziser;
-        this.godinaIzdanja = godinaIzdanja;
+    constructor (n, r, g, o){
+        this.naslov = n;
+        this.reziser = r;
+        this.godinaIzdanja = g;
+        this.ocene = o;
     }
     stampaj(){
         console.log(`${this.naslov} - ${this.reziser} - ${this.godinaIzdanja}`)
+    }
+
+    prosek(){
+        let sumaOcena = 0;
+        this.ocene.forEach(ocena=>{
+            sumaOcena += ocena;
+        })
+        return sumaOcena/this.ocene.length
     }
 
     set naslov(n){
@@ -35,6 +44,20 @@ class Film {
         }
     }
 
+    set ocene(o){
+        if(Array.isArray(o)){
+            this._ocene=o;
+        }
+        else{
+            this._ocene=[];
+        }
+        
+    }
+
+    get ocene(){
+        return this._ocene
+    }
+
     get naslov(){
         return this._naslov
     }
@@ -46,5 +69,7 @@ class Film {
     get godinaIzdanja(){
         return this._godinaIzdanja
     }
+
+
 }
 export default Film
