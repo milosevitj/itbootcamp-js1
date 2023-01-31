@@ -1,0 +1,14 @@
+[
+    {
+        "name": "plehovi",
+        "kolicina": 500
+    },
+    {
+      "name": "kljucevi",
+      "kolicina": 50
+    },
+    {
+      "name": "kalupi",
+      "kolicina": 25
+    }
+]

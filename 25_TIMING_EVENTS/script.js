@@ -9,13 +9,13 @@ console.log(4);
 let i = 5;
 setInterval(() => {
   console.log(i);
-  i++
+  i++;
 }, 1000);
 
 let btn1 = document.querySelector("#click1");
 let btn2 = document.querySelector("#click2");
 let btn3 = document.querySelector("#click3");
-
+let btn4 = document.querySelector("#click4");
 let ispis = document.querySelector("#ispis");
 
 let vreme = 1000 * 2; // moze i sa promenljivom
@@ -43,13 +43,47 @@ btn2.addEventListener("click", function (e) {
   tajmer = null;
 });
 
+let vr = 0;
+let clock = null; // clock -> sat1, clock ->sat2, clock -> sat3
 btn3.addEventListener("click", () => {
-    setInterval(() => {
-      let datum = new Date();
-      let h = datum.getHours();
-      let m = datum.getMinutes();
-      let s = datum.getSeconds();
-
-      ispis.innerHTML = `${h}:${m}:${s}`;
+  if (clock === null) {
+    clock = setInterval(() => {
+      // let datum = new Date();
+      // let h = datum.getHours();
+      // let m = datum.getMinutes();
+      // let s = datum.getSeconds();
+      // ispis.innerHTML = `${h}:${m}:${s}`;
+      vr++;
+      ispis.innerHTML = vr;
     }, 1000);
+  }
+});
+
+btn4.addEventListener("click", () => {
+  clearInterval(clock);
+  clock = null;
+});
+
+
+let btn5 = document.querySelector("#click5");
+let input = document.querySelector("#inp");
+let btn6 = document.querySelector("#click6");
+
+
+let interval = null;
+let brojac=0;
+btn5.addEventListener("click", () => {
+  if (interval == null) {
+    interval = setInterval(() => {
+      brojac++
+      input.value = `${brojac}`;
+    }, 1000);
+  }
+});
+
+btn6.addEventListener("click", () => {
+  clearInterval(interval);
+  interval = null;
+  brojac= 0;
+  input.value = "";
 });

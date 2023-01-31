@@ -1,0 +1,14 @@
+[
+    {
+        "name": "plakari",
+        "kolicina": 5
+    },
+    {
+      "name": "cipelari",
+      "kolicina": 50
+    },
+    {
+      "name": "civiluci",
+      "kolicina": 230
+    }
+]

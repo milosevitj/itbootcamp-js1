@@ -1,0 +1,14 @@
+[
+    {
+        "name": "bokal",
+        "kolicina": 25
+    },
+    {
+      "name": "casa",
+      "kolicina": 300
+    },
+    {
+      "name": "flasa",
+      "kolicina": 120
+    }
+]
