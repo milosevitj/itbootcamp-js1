@@ -3,11 +3,11 @@ import { ChatUI } from "./ui.js";
 
 //DOM
 let ul = document.querySelector("ul");
-let inputPOr = document.getElementById("inpSend");
-let btnSend = document.getElementById("send");
-let inputUpdate = document.getElementById("inpText");
-let btnUpdate = document.getElementById("btnUpd");
-let divChangeUser = document.getElementById("changeUser");
+let inputPOr = document.querySelector("#inpSend");
+let btnSend = document.querySelector("#send");
+let inputUpdate = document.querySelector("#inpText");
+let btnUpdate = document.querySelector("#btnUpd");
+let divChangeUser = document.querySelector("#changeUser");
 let nav = document.querySelector("nav");
 
 let username = "anonymus";
