@@ -1,24 +1,59 @@
 import { Chatroom } from "./chat.js";
 import { ChatUI } from "./ui.js";
 
-let chatroom1 = new Chatroom("#general", "kaca");
+//DOM
+let ul = document.querySelector("ul");
+let inputPOr = document.getElementById("inpSend");
+let btnSend = document.getElementById("send");
+let inputUpdate = document.getElementById("inpText");
+let btnUpdate = document.getElementById("btnUpd");
+let divChangeUser = document.getElementById("changeUser");
+let nav = document.querySelector("nav");
 
-chatroom1.getChats((data) => {
-  console.log(data);
-}); // pozivam funkicju callback
+let username = "anonymus";
+if (localStorage.username) {
+  username = localStorage.username;
+}
+
+let chatroom = new Chatroom("#general", username); // po defaultu je soba general
+let chatUI = new ChatUI(ul); // objekat chat ui klase
 
 //////////////////////////
 
-let ul = document.querySelector("ul");
-let chatUI1 = new ChatUI(ul);
-console.log(chatUI1.list); // testiram geter
+chatroom.getChats((data) => {
+  chatUI.templateLI(data);
+});
 
-// chatroom1.getChats((data) => {
-//   let li = document.createElement("li");
-//   li.textContent = data.message;
-//   ul.appendChild(li);
-// });
+btnSend.addEventListener("click", () => {
+  if (inputPOr.value.trim() !== "") {
+    chatroom
+      .addChat(inputPOr.value)
+      .then(() => (inputPOr.value = ""))
+      .catch((err) => console.log(err));
+  }
+});
 
-chatroom1.getChats((data) => {
-  chatUI1.templateLI(data);
+btnUpdate.addEventListener("click", (e) => {
+  e.preventDefault();
+  let newUser = inputUpdate.value;
+  chatroom.username = newUser;
+  inputUpdate.value = "";
+  divChangeUser.textContent = `Username changed: ${chatroom.username}`;
+  setTimeout(() => {
+    divChangeUser.innerHTML = "";
+  }, 1000 * 3);
+});
+
+nav.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    let newRoom = e.target.textContent;
+    //2.Updajt sobe na koju je kliknuto
+    chatroom.updateRoom(newRoom);
+    //3. Izbrisati sve poruke sa ekrana
+    chatUI.clearUL();
+    // 4. prikazi cetove
+    chatroom.getChats((data) => {
+      chatUI.templateLI(data);
+    });
+  }
 });
